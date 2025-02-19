@@ -55,7 +55,7 @@ void vp_free_vq(struct vring_virtqueue *vq)
     }
 }
 
-int vp_find_vq(unsigned int ioaddr, int queue_index,
+int vp_find_vq(unsigned long ioaddr, int queue_index,
                struct vring_virtqueue *vq, struct dma_device *dma_dev,
                size_t header_size)
 {
@@ -65,11 +65,11 @@ int vp_find_vq(unsigned int ioaddr, int queue_index,
 
    /* select the queue */
 
-   outw(queue_index, ioaddr + VIRTIO_PCI_QUEUE_SEL);
+   writew(queue_index, ioaddr + VIRTIO_PCI_QUEUE_SEL);
 
    /* check if the queue is available */
 
-   num = inw(ioaddr + VIRTIO_PCI_QUEUE_NUM);
+   num = readw(ioaddr + VIRTIO_PCI_QUEUE_NUM);
    if (!num) {
            DBG("VIRTIO-PCI ERROR: queue size is 0\n");
            return -1;
@@ -77,7 +77,7 @@ int vp_find_vq(unsigned int ioaddr, int queue_index,
 
    /* check if the queue is already active */
 
-   if (inl(ioaddr + VIRTIO_PCI_QUEUE_PFN)) {
+   if (readl(ioaddr + VIRTIO_PCI_QUEUE_PFN)) {
            DBG("VIRTIO-PCI ERROR: queue already active\n");
            return -1;
    }
@@ -98,7 +98,7 @@ int vp_find_vq(unsigned int ioaddr, int queue_index,
     * NOTE: vr->desc is initialized by vring_init()
     */
 
-   outl(dma(&vq->map, vr->desc) >> PAGE_SHIFT, ioaddr + VIRTIO_PCI_QUEUE_PFN);
+   writel(dma(&vq->map, vr->desc) >> PAGE_SHIFT, ioaddr + VIRTIO_PCI_QUEUE_PFN);
 
    return num;
 }

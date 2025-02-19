@@ -137,69 +137,69 @@ struct virtio_pci_modern_device {
     int notify_cap_pos;
 };
 
-static inline u32 vp_get_features(unsigned int ioaddr)
+static inline u32 vp_get_features(unsigned long ioaddr)
 {
-   return inl(ioaddr + VIRTIO_PCI_HOST_FEATURES);
+   return readl(ioaddr + VIRTIO_PCI_HOST_FEATURES);
 }
 
-static inline void vp_set_features(unsigned int ioaddr, u32 features)
+static inline void vp_set_features(unsigned long ioaddr, u32 features)
 {
-        outl(features, ioaddr + VIRTIO_PCI_GUEST_FEATURES);
+        writel(features, ioaddr + VIRTIO_PCI_GUEST_FEATURES);
 }
 
-static inline void vp_get(unsigned int ioaddr, unsigned offset,
+static inline void vp_get(unsigned long ioaddr, unsigned offset,
                      void *buf, unsigned len)
 {
    u8 *ptr = buf;
    unsigned i;
 
    for (i = 0; i < len; i++)
-           ptr[i] = inb(ioaddr + VIRTIO_PCI_CONFIG + offset + i);
+           ptr[i] = readb(ioaddr + VIRTIO_PCI_CONFIG + offset + i);
 }
 
-static inline u8 vp_get_status(unsigned int ioaddr)
+static inline u8 vp_get_status(unsigned long ioaddr)
 {
-   return inb(ioaddr + VIRTIO_PCI_STATUS);
+   return readb(ioaddr + VIRTIO_PCI_STATUS);
 }
 
-static inline void vp_set_status(unsigned int ioaddr, u8 status)
+static inline void vp_set_status(unsigned long ioaddr, u8 status)
 {
    if (status == 0)        /* reset */
            return;
-   outb(status, ioaddr + VIRTIO_PCI_STATUS);
+   writeb(status, ioaddr + VIRTIO_PCI_STATUS);
 }
 
-static inline u8 vp_get_isr(unsigned int ioaddr)
+static inline u8 vp_get_isr(unsigned long ioaddr)
 {
-   return inb(ioaddr + VIRTIO_PCI_ISR);
+   return readb(ioaddr + VIRTIO_PCI_ISR);
 }
 
-static inline void vp_reset(unsigned int ioaddr)
+static inline void vp_reset(unsigned long ioaddr)
 {
-   outb(0, ioaddr + VIRTIO_PCI_STATUS);
-   (void)inb(ioaddr + VIRTIO_PCI_ISR);
+   writeb(0, ioaddr + VIRTIO_PCI_STATUS);
+   (void)readb(ioaddr + VIRTIO_PCI_ISR);
 }
 
-static inline void vp_notify(unsigned int ioaddr, int queue_index)
+static inline void vp_notify(unsigned long ioaddr, int queue_index)
 {
-   outw(queue_index, ioaddr + VIRTIO_PCI_QUEUE_NOTIFY);
+   writew(queue_index, ioaddr + VIRTIO_PCI_QUEUE_NOTIFY);
 }
 
-static inline void vp_del_vq(unsigned int ioaddr, int queue_index)
+static inline void vp_del_vq(unsigned long ioaddr, int queue_index)
 {
    /* select the queue */
 
-   outw(queue_index, ioaddr + VIRTIO_PCI_QUEUE_SEL);
+   writew(queue_index, ioaddr + VIRTIO_PCI_QUEUE_SEL);
 
    /* deactivate the queue */
 
-   outl(0, ioaddr + VIRTIO_PCI_QUEUE_PFN);
+   writel(0, ioaddr + VIRTIO_PCI_QUEUE_PFN);
 }
 
 struct vring_virtqueue;
 
 void vp_free_vq(struct vring_virtqueue *vq);
-int vp_find_vq(unsigned int ioaddr, int queue_index,
+int vp_find_vq(unsigned long ioaddr, int queue_index,
                struct vring_virtqueue *vq, struct dma_device *dma_dev,
                size_t header_size);
 
