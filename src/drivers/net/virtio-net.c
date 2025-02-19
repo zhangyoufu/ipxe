@@ -460,7 +460,7 @@ static struct net_device_operations virtnet_operations = {
  * @ret rc	Return status code
  */
 static int virtnet_probe_legacy ( struct pci_device *pci ) {
-	unsigned long ioaddr = pci->ioaddr;
+	unsigned long ioaddr = (unsigned long)phys_to_virt(pci->membase);
 	struct net_device *netdev;
 	struct virtnet_nic *virtnet;
 	u32 features;
@@ -478,7 +478,7 @@ static int virtnet_probe_legacy ( struct pci_device *pci ) {
 	netdev->dev = &pci->dev;
 
 	DBGC ( virtnet, "VIRTIO-NET %p busaddr=%s ioaddr=%#lx irq=%d\n",
-	       virtnet, pci->dev.name, ioaddr, pci->irq );
+	       virtnet, pci->dev.name, virt_to_phys((void*)ioaddr), pci->irq );
 
 	/* Enable PCI bus master and reset NIC */
 	adjust_pci_device ( pci );
