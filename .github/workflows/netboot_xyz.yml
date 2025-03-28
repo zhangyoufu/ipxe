@@ -1,0 +1,35 @@
+name: Build for netboot.xyz
+on:
+  push:
+    branches:
+    - '*'
+    tags:
+    - '*'
+defaults:
+  run:
+    shell: bash
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Install dependencies
+      run: |-
+        sudo apt-get update
+        sudo apt-get install --no-install-recommends --yes -o Dpkg::Use-Pty=0 liblzma-dev
+    - name: Build
+      run: make -j 4 -C src bin/ipxe.usb EMBED=autoexec.ipxe
+    - name: Upload artifact
+      if: startsWith(github.event.ref, 'refs/heads/')
+      uses: actions/upload-artifact@v4
+      with:
+        name: ipxe.usb
+        path: src/bin/ipxe.usb
+        if-no-files-found: error
+    - name: Release
+      if: startsWith(github.event.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v2
+      with:
+        files: src/bin/ipxe.usb
