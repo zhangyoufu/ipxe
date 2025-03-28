@@ -41,14 +41,17 @@ jobs:
         with:
           fetch-depth: 0
       - name: Cache permissions
+        if: false
         run: |
           sudo chown $(id -un) /var/cache/apt/archives
       - name: Cache packages
+        if: false
         uses: actions/cache/restore@v4
         with:
           path: /var/cache/apt/archives/*.deb
           key: apt-cache-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Install packages
+        if: false
         run: |
           sudo dpkg --add-architecture i386
           sudo apt update
