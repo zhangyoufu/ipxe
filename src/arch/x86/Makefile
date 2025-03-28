@@ -13,13 +13,13 @@ SRCDIRS		+= arch/x86/core
 SRCDIRS		+= arch/x86/image
 SRCDIRS		+= arch/x86/interface/pcbios
 SRCDIRS		+= arch/x86/interface/pxe
-SRCDIRS		+= arch/x86/interface/efi
-SRCDIRS		+= arch/x86/interface/vmware
-SRCDIRS		+= arch/x86/interface/syslinux
+#SRCDIRS		+= arch/x86/interface/efi
+#SRCDIRS		+= arch/x86/interface/vmware
+#SRCDIRS		+= arch/x86/interface/syslinux
 SRCDIRS		+= arch/x86/prefix
 SRCDIRS		+= arch/x86/hci/commands
-SRCDIRS		+= arch/x86/drivers/xen
-SRCDIRS		+= arch/x86/drivers/hyperv
+#SRCDIRS		+= arch/x86/drivers/xen
+#SRCDIRS		+= arch/x86/drivers/hyperv
 SRCDIRS		+= arch/x86/transitions
 
 # disable valgrind
@@ -31,4 +31,4 @@ CFLAGS_lkrnprefix	+= -DVERSION="\"$(VERSION)\""
 
 # Include Hyper-V driver in the all-drivers build
 #
-DRIVERS_hyperv += hyperv
+#DRIVERS_hyperv += hyperv
