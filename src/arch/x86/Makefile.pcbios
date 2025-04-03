@@ -2,7 +2,7 @@
 
 # BIOS-specific directories containing source files
 #
-SRCDIRS		+= arch/x86/drivers/net
+#SRCDIRS		+= arch/x86/drivers/net
 
 # The linker scripts
 #
