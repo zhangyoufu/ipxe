@@ -1,0 +1,55 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 6 (0x6)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, ST=TX, O=netboot.xyz, CN=netboot.xyz, emailAddress=contact@netboot.xyz
+        Validity
+            Not Before: May  2 18:09:26 2016 GMT
+            Not After : Apr 30 18:09:26 2026 GMT
+        Subject: C=US, ST=TX, O=netboot.xyz, CN=netboot.xyz, emailAddress=contact@netboot.xyz
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:eb:8c:36:26:4e:fd:bf:fc:eb:18:87:30:59:0f:
+                    fb:b9:02:fb:73:0b:fe:ad:34:a2:3b:86:5f:5c:00:
+                    d1:ba:c4:f3:83:05:3e:0e:76:8f:d6:2b:67:6e:61:
+                    07:72:7f:84:83:8e:98:bd:40:ca:9c:44:97:07:b6:
+                    22:5a:a5:ff:4a:84:52:71:17:4b:2d:19:21:2a:27:
+                    d3:ec:cf:b3:1a:c4:de:44:18:2e:c5:ab:ae:56:47:
+                    ee:d7:b7:2d:ba:35:9e:c5:b0:c6:dd:cd:ff:98:5c:
+                    67:6a:3c:0f:81:6c:ef:81:a6:8a:fb:e3:d4:f3:14:
+                    81:9f:53:a9:39:ef:c0:6a:fd:f1:ab:c8:b3:12:aa:
+                    4f:c7:ea:88:5c:78:2c:eb:55:c1:be:79:ee:b5:28:
+                    75:5e:31:e1:51:a2:2e:38:c3:5e:69:bb:25:ae:ef:
+                    b9:02:f5:c9:08:67:95:07:ea:b1:3c:41:63:3a:db:
+                    52:b2:d2:8f:a3:ff:cb:ce:16:ad:d2:0d:68:9b:68:
+                    83:d9:46:a1:e3:4a:fa:4c:9b:6c:46:60:95:75:12:
+                    c2:68:ab:aa:bf:3a:e8:e8:55:c3:84:a2:97:e4:d8:
+                    c2:e8:c2:ec:00:2a:94:ae:23:b1:66:dc:75:a3:18:
+                    60:e9:72:38:8b:32:83:2d:45:85:e4:c1:ab:ba:bb:
+                    51:7d
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: 
+                Digital Signature
+            X509v3 Extended Key Usage: 
+                Code Signing
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        0a:a6:f7:11:25:dd:6e:19:aa:68:5c:65:03:eb:87:4e:26:f5:
+        55:7e:9f:67:74:08:f1:34:a7:13:88:45:20:33:35:39:6b:bc:
+        ec:34:69:e6:09:42:6f:86:a6:5f:d3:cd:bc:43:f8:e9:59:d8:
+        7a:3f:5b:02:84:bc:06:20:be:07:15:2a:81:c6:48:c5:7a:c0:
+        53:3f:5f:19:a3:40:95:a5:bf:ff:4b:c2:50:78:f3:c7:d6:83:
+        e1:5b:47:87:3a:8d:45:91:ed:89:8b:25:d6:1a:e4:26:02:0e:
+        18:d1:ab:60:58:73:e7:7e:fe:c6:7d:cb:ce:59:d8:98:c0:e4:
+        10:89:a2:5e:52:a1:c3:ad:9c:4f:19:7d:8f:11:62:cc:0a:47:
+        ea:e6:b7:e9:96:57:fd:de:b8:f6:48:5b:da:bb:57:60:c8:3f:
+        97:b4:50:d4:25:f7:d6:e0:d5:a2:40:6b:26:fa:ab:95:86:a0:
+        22:3d:25:1a:d2:77:18:68:ef:26:05:96:2f:76:b4:ca:a9:19:
+        f1:07:f2:37:df:da:d4:42:1c:4e:d2:3a:58:95:e3:2c:5b:70:
+        e7:4d:17:a1:41:7d:65:ef:f9:62:66:c8:06:fe:62:ec:83:06:
+        07:a8:30:7a:50:e3:50:96:b3:e3:7c:cd:9d:e9:65:ba:38:09:
+        5a:63:71:f6
