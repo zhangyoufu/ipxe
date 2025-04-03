@@ -157,6 +157,7 @@ SRCS	+= usr/autoboot.c
 SRCS	+= usr/dhcpmgmt.c
 SRCS	+= usr/ifmgmt.c
 SRCS	+= usr/imgmgmt.c
+SRCS	+= usr/imgtrust.c
 SRCS	+= usr/prompt.c
 SRCS	+= usr/pxemenu.c
 SRCS	+= usr/route.c
