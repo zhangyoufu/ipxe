@@ -123,7 +123,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 //#define	IMAGE_SDI		/* SDI image support */
 //#define	IMAGE_PNM		/* PNM image support */
 //#define	IMAGE_PNG		/* PNG image support */
-//#define	IMAGE_DER		/* DER image support */
+#define	IMAGE_DER		/* DER image support */
 //#define	IMAGE_PEM		/* PEM image support */
 //#define	IMAGE_EFISIG		/* EFI signature list image support */
 //#define	IMAGE_ZLIB		/* ZLIB image support */
@@ -158,7 +158,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 //#define PXE_CMD		/* PXE commands */
 #define REBOOT_CMD		/* Reboot command */
 #define POWEROFF_CMD		/* Power off command */
-//#define IMAGE_TRUST_CMD	/* Image trust management commands */
+#define IMAGE_TRUST_CMD	/* Image trust management commands */
 //#define IMAGE_CRYPT_CMD	/* Image encryption management commands */
 //#define PCI_CMD		/* PCI commands */
 //#define PARAM_CMD		/* Request parameter commands */

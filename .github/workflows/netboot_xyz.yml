@@ -20,7 +20,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install --no-install-recommends --yes -o Dpkg::Use-Pty=0 liblzma-dev
     - name: Build
-      run: make -j 4 -C src bin/ipxe.usb EMBED=autoexec.ipxe
+      run: make -j 4 -C src bin/ipxe.usb EMBED=autoexec.ipxe TRUST=pki/ipxe.org/ca.crt,pki/netboot.xyz/ca.crt
     - name: Upload artifact
       if: startsWith(github.event.ref, 'refs/heads/')
       uses: actions/upload-artifact@v4
