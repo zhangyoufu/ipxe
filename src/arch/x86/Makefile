@@ -22,6 +22,8 @@ SRCDIRS		+= arch/x86/hci/commands
 #SRCDIRS		+= arch/x86/drivers/hyperv
 SRCDIRS		+= arch/x86/transitions
 
+NON_AUTO_SRCS	+= arch/x86/interface/pcbios/bios_reboot.c
+
 # disable valgrind
 CFLAGS		+= -DNVALGRIND
 
