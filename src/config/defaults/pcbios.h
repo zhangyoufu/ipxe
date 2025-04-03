@@ -34,12 +34,12 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 
 //#define	IMAGE_ELF		/* ELF image support */
 //#define	IMAGE_MULTIBOOT		/* MultiBoot image support */
-#define	IMAGE_PXE		/* PXE image support */
+//#define	IMAGE_PXE		/* PXE image support */
 #define IMAGE_SCRIPT		/* iPXE script image support */
 #define IMAGE_BZIMAGE		/* Linux bzImage image support */
 
-#define PXE_STACK		/* PXE stack in iPXE - required for PXELINUX */
-#define PXE_MENU		/* PXE menu booting */
+//#define PXE_STACK		/* PXE stack in iPXE - required for PXELINUX */
+//#define PXE_MENU		/* PXE menu booting */
 
 //#define	SANBOOT_PROTO_ISCSI	/* iSCSI protocol */
 //#define	SANBOOT_PROTO_AOE	/* AoE protocol */
