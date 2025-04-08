@@ -21,7 +21,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #define SANBOOT_NULL
 #define ENTROPY_RDRAND
 #define TIME_RTC
-#define REBOOT_PCBIOS
+#define REBOOT_NULL
 #define ACPI_RSDP
 #define MPAPI_PCBIOS
 
@@ -40,7 +40,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #define PXE_STACK		/* PXE stack in iPXE - required for PXELINUX */
 #define PXE_MENU		/* PXE menu booting */
 
-#define	REBOOT_CMD		/* Reboot command */
+//#define	REBOOT_CMD		/* Reboot command */
 #define	CPUID_CMD		/* x86 CPU feature detection command */
 
 #endif /* CONFIG_DEFAULTS_PCBIOS_H */
